@@ -1,4 +1,4 @@
-PROJ = button
+PROJ = debounce
 PIN_DEF = ../../ulx3s.lpf
 PNRDEVICE = 25k
 PNRPACKAGE = CABGA381

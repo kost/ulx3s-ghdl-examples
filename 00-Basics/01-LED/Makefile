@@ -1,5 +1,5 @@
 PROJ = led_on
-PIN_DEF = /fpga/fpga-odysseus/tutorials/ulx3s.lpf
+PIN_DEF = ../../ulx3s.lpf
 PNRDEVICE = 25k
 PNRPACKAGE = CABGA381
 

@@ -1,4 +1,4 @@
-PROJ = button
+PROJ = counter
 PIN_DEF = ../../ulx3s.lpf
 PNRDEVICE = 25k
 PNRPACKAGE = CABGA381
