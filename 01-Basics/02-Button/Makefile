@@ -1,6 +1,6 @@
 PROJ = button
 PIN_DEF = ../../ulx3s.lpf
-PNRDEVICE = 25k
+PNRDEVICE = 85k
 PNRPACKAGE = CABGA381
 
 all: $(PROJ).config $(PROJ).bit
@@ -15,14 +15,14 @@ all: $(PROJ).config $(PROJ).bit
 	ecppack $< $@
 
 prog: $(PROJ).bit
-	ujprog $<
+	fujprog $<
 
 sudo-prog: $(PROJ).bit
 	@echo 'Executing prog as root!!!'
-	sudo ujprog $<
+	sudo fujprog $<
 
 clean:
-	rm -f $(PROJ).json $(PROJ).config $(PROJ).bit 
+	rm -f $(PROJ).json $(PROJ).config $(PROJ).bit
 
 .SECONDARY:
 .PHONY: all prog clean
