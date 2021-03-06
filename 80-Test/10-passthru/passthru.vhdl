@@ -146,12 +146,12 @@ begin
       end if;
   end process;
 
-  process(sd_clk, wifi_gpio17) -- gpio17 is OLED CSn
+  process(sd_clk)
   begin
-    if wifi_gpio17 = '1' then
-      R_spi_miso <= '0' & btn; -- sample button state during csn=1
-    else
-      if rising_edge(sd_clk) then
+    if rising_edge(sd_clk) then
+      if wifi_gpio17 = '1' then -- gpio17 is OLED CSn
+        R_spi_miso <= '0' & btn; -- sample button state during csn=1
+      else
         R_spi_miso <= R_spi_miso(R_spi_miso'high-1 downto 0) & R_spi_miso(R_spi_miso'high) ; -- shift to the left
       end if;
     end if;
