@@ -10,7 +10,7 @@ all: $(PROJ).config $(PROJ).bit
 	yosys -p 'ghdl --std=08 $(PROJ).vhdl -e $(UNIT); synth_ecp5 -json $@'
 
 %.config: $(PIN_DEF) %.json
-	nextpnr-ecp5 --$(PNRDEVICE) --package $(PNRPACKAGE) --json $(PROJ).json --textcfg $@ --lpf $(PIN_DEF) -q --timing-allow-fail
+	nextpnr-ecp5 --$(PNRDEVICE) --package $(PNRPACKAGE) --json $(PROJ).json --textcfg $@ --lpf $(PIN_DEF) -q --timing-allow-fail --lpf-allow-unconstrained
 
 %.bit: %.config
 	ecppack $< $@
